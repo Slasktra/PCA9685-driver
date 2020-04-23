@@ -35,7 +35,10 @@ def value_low(val):
     return val & 0xFF
 
 def value_high(val):
-    return (val >> 8) & 0xFF
+    if val == 0:
+        return 16 #Turn off the LED
+    else:
+        return (val >> 8) & 0xFF
 
 class Device(object):
 
